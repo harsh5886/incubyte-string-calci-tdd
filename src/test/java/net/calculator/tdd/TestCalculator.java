@@ -17,7 +17,7 @@ public class TestCalculator {
         // assertEquals(8, add("1\n2,5"));
         // assertEquals(10, add("1\n2,5,,\n2"));
         // assertEquals(3, add("//;\n1;2"));
-        assertEquals(-2, add("-1"));
+        assertEquals(-1, add("-1"));
     }
 
     int add(final String numbers) {
