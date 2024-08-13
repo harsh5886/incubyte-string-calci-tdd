@@ -10,6 +10,7 @@ public class TestCalculator {
     public void testCalculator() {
         assertEquals(0, add(""));
         assertEquals(1, add("1"));
+        assertEquals(6, add("1,5"));
     }
 
     int add(final String numbers) {
