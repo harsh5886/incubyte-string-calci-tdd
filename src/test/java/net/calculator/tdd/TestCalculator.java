@@ -24,8 +24,15 @@ public class TestCalculator {
             return 0;
         }
 
-        final String delimiter = "[,\\n]";
-        final String intString = numbers;
+        String delimiter = "";
+        String intString = numbers;
+
+        if (numbers.startsWith("//")) {
+            delimiter = numbers.substring(numbers.indexOf("//") + 2, numbers.indexOf("\n"));
+            intString = numbers.split("//" + delimiter + "\\n")[1];
+        } else {
+            delimiter = "[,\\n]";
+        }
         final String tokens[] = intString.split(delimiter);
         final int sum = Arrays.stream(tokens).mapToInt(token -> {
             int intToken = 0;
