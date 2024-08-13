@@ -22,7 +22,7 @@ public class TestCalculator {
             return 0;
         }
 
-        final String delimiter = ",";
+        final String delimiter = "[,\\n]";
         final String intString = numbers;
         final String tokens[] = intString.split(delimiter);
         final int sum = Arrays.stream(tokens).mapToInt(token -> {
