@@ -8,6 +8,14 @@ public class TestCalculator {
 
     @Test
     public void testCalculator() {
-        assertEquals(0, 0);
+        assertEquals(0, add(""));
+    }
+
+    int add(final String numbers) {
+        if (numbers == null || numbers.strip().isBlank()) {
+            return 0;
+        }
+
+        return Integer.valueOf(numbers);
     }
 }
