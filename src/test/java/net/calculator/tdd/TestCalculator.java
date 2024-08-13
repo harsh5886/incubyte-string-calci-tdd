@@ -9,6 +9,7 @@ public class TestCalculator {
     @Test
     public void testCalculator() {
         assertEquals(0, add(""));
+        assertEquals(1, add("1"));
     }
 
     int add(final String numbers) {
