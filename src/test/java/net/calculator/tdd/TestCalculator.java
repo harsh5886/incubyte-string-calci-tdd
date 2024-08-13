@@ -11,13 +11,13 @@ public class TestCalculator {
 
     @Test
     public void testCalculator() {
-        // assertEquals(0, add(""));
-        // assertEquals(1, add("1"));
-        // assertEquals(6, add("1,5"));
-        // assertEquals(8, add("1,2,5"));
-        // assertEquals(8, add("1\n2,5"));
-        // assertEquals(10, add("1\n2,5,,\n2"));
-        // assertEquals(3, add("//;\n1;2"));
+        assertEquals(0, add(""));
+        assertEquals(1, add("1"));
+        assertEquals(6, add("1,5"));
+        assertEquals(8, add("1,2,5"));
+        assertEquals(8, add("1\n2,5"));
+        assertEquals(10, add("1\n2,5,,\n2"));
+        assertEquals(3, add("//;\n1;2"));
         assertThrows(IllegalArgumentException.class, () -> add("-1"));
     }
 
