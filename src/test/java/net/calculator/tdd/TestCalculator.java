@@ -1,6 +1,7 @@
 package net.calculator.tdd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.Arrays;
 
@@ -17,7 +18,7 @@ public class TestCalculator {
         // assertEquals(8, add("1\n2,5"));
         // assertEquals(10, add("1\n2,5,,\n2"));
         // assertEquals(3, add("//;\n1;2"));
-        assertEquals(-1, add("-1"));
+        assertThrows(IllegalArgumentException.class, () -> add("-1"));
     }
 
     int add(final String numbers) {
@@ -39,6 +40,9 @@ public class TestCalculator {
             int intToken = 0;
             try {
                 intToken = Integer.valueOf(token);
+                if (intToken < 0) {
+                    throw new IllegalArgumentException("Negative integer encountered!");
+                }
             } catch (NumberFormatException nfe) {
                 System.err.println("The token '" + token + "' may not be parsed to integer !");
             }
