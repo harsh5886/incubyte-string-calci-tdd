@@ -14,6 +14,7 @@ public class TestCalculator {
         assertEquals(1, add("1"));
         assertEquals(6, add("1,5"));
         assertEquals(8, add("1,2,5"));
+        assertEquals(8, add("1\n2,5"));
     }
 
     int add(final String numbers) {
