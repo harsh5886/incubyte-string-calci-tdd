@@ -2,6 +2,8 @@ package net.calculator.tdd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 public class TestCalculator {
@@ -18,6 +20,19 @@ public class TestCalculator {
             return 0;
         }
 
-        return Integer.valueOf(numbers);
+        final String delimiter = ",";
+        final String intString = numbers;
+        final String tokens[] = intString.split(delimiter);
+        final int sum = Arrays.stream(tokens).mapToInt(token -> {
+            int intToken = 0;
+            try {
+                intToken = Integer.valueOf(token);
+            } catch (NumberFormatException nfe) {
+                System.err.println("The token '" + token + "' may not be parsed to integer !");
+            }
+            return intToken;
+        }).sum();
+
+        return sum;
     }
 }
